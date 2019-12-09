@@ -1,0 +1,84 @@
+****************
+* P2/Double-Linked List
+* Class CS-221 section 002
+* Date 12/6/2019
+* Robbie Gill
+**************** 
+
+OVERVIEW:
+IUDoubleLinkedList provides functionality for the DLLNodeClass, allowing the user to create a modifiable iterable collection of DLLNode objects.
+
+INCLUDED FILES:
+ 
+ * IUDoubleLinkedList.java
+ * DLLNode.java
+ * README - this file
+* TestCases - run through TestNG
+
+
+COMPILING AND RUNNING:
+ From the directory containing all source files, compile the
+ driver class (and all dependencies) with the command:
+
+ $ javac 
+ 
+ Run the compiled class file with the command:
+ $ java IUDoubleLinkedList
+
+ The console output will give the results after the program finishes.
+
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ Explain the main concepts and organization of your program so that
+ the reader can understand how your program works. This is not a repeat
+ of JavaDoc comments or an exhaustive listing of all methods, but an
+ explanation of the critical algorithms and object interactions that make
+ up the program.
+
+ If your program has multiple classes, explain the main responsibilities of each class. Explain how the classes work together to achieve the program goals. If there are important interfaces, explain their roles
+ as well.
+
+ If you were responsible for designing the program's classes and choosing how they work together, why did you design the program this way? What, if anything, could be improved? 
+
+ This is the sort of information someone who really wants to
+ understand your program - possibly to make future enhancements -
+ would want to know.
+
+DLLNode Provides the functionality of the nodes allowing them to create references to each other and store data. IUDoubleLinkedList<T> The double linked list creates a relationship between the nodes that can be used to implement different data structures. listIterator allows you to iterate over the nodes in the DoubleLinkedList. List Iterator can also modify the list. 
+
+The DLLNode class can exist independently of the linkedlist or listIterator, if you wanted to you could create and Instantiate nodes one by one, but this would be tedious and impractical for most applications. This is where the DoubleLinkedList comes in DoubleLinkedList provides ease of access and protective measures to Node class objects. The iterator further expands this to allow the user to transverse the list and make modifications as you would if you were going to use the linkedList for a stack or queue that was being used and or modified.
+
+
+
+
+
+
+
+
+
+
+TESTING:
+
+ How did you test your program to be sure it works and meets all of the
+ requirements? Can your program handle bad input? Is your program 
+ idiot-proof? How do you know? What are the known issues / bugs
+ remaining in your program?
+
+The program passes all the given testNG tests but could be hypothetically broken in the case that the iterator was not instantiated from the zero index. I have not tested this case thoroughly. Because of the generics, the program should be able to handle the most bad input. And the design around the existing interface makes the functionality clear. 
+
+DISCUSSION:
+ 
+ Discuss the issues you encountered during programming (development)
+ and testing. What problems did you have? What did you have to research and learn on your own? What kinds of errors did you get? How did you 
+ fix them?
+
+The most difficult part of the project was creating the add and remove methods for the class and its iterator. I used the Oracle IndexUnsortedList interface as an extensive recourse. I spent a bit of time researching node visualization tools as I found keeping track of what had and hadn't been updated very tedious. I encountered a lot of NullPointerExceptions. I found the best way to test out develop and debug, the methods were to build a separate driver class in which I could test and print each step to the console. 
+
+ What parts of the project did you find challenging? Is there anything that finally "clicked" for you in the process of working on this project?
+. The hardest concept to grasp and keep track of the current cursor position. I found that drawing out each step of the process made it much easier to keep track of what had and hadn't been updated. Creating a separate Node to keep track of the last returned Node declared at the class level simplified many of the methods so that I wouldn't have to call a getNodeMethod on each call.
+
+ 
+ 
+----------------------------------------------------------------------------
